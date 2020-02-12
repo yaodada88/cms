@@ -2,12 +2,21 @@
   "name": "cms",
   "version": "0.1.0",
   "private": true,
+  "description": "用vue做的一个内容管理系统",
+  "author": "yaodada",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "start": "yarn serve"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "better-scroll": "^1.15.2",
     "core-js": "^3.6.4",
+    "echarts": "^4.6.0",
+    "element-ui": "^2.13.0",
+    "js-cookie": "^2.2.1",
+    "mockjs": "^1.1.0",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"

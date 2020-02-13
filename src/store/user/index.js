@@ -1,7 +1,6 @@
-import {login,userInfo} from '@/api/login'
+import {login,userInfo,logout} from '@/api/login'
 import {getToken,setToken,removeToken}  from '@/common/auth.js'
 export default {
-    namespaced:true,
     state:{
         token:getToken(),
         name:"",
@@ -44,9 +43,21 @@ export default {
                 obj.avatar=data.avatar;
                 obj.permissions = data.permissions;
                 commit("getMutationUserInfo",obj);
+                return resolve(data);
             }).catch(err=>{
                 return reject(err);
             })
+           })
+       },
+       getLogout({commit}){
+           return new Promise((resolve,reject)=>{
+               logout().then((res)=>{
+                   removeToken();
+                    commit('setMutationsToken','');
+                    return resolve();
+               }).catch(err=>{
+                   return reject(err);
+               })
            })
        }
     },

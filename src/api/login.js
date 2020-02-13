@@ -7,3 +7,7 @@ export function login(userInfo){
 export function userInfo(){
     return axios.post("/user/getInfo");
 }
+
+export function logout(){
+    return axios.post("/login/logout");
+}

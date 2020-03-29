@@ -46,6 +46,27 @@ export const constantRouterMap = [
           }
         }
       ]
+    },
+    {
+      path:'/echarts',
+      component:Layout,
+      redirect:"/echarts/echarts-index",
+      alwaysShow:true,
+      meta:{
+        icon:'s-opportunity',
+        title:"可视化"
+      },
+      children:[
+        {
+          path:'echarts-index',
+          name:'echarts-index',
+          component:()=>import('@/views/echarts/index'),
+          meta:{
+            icon:'chat-dot-round',
+            title:"数据统计"
+          }
+        }
+      ]
     }
 ]
 
